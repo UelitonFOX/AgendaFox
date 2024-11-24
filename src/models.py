@@ -27,7 +27,8 @@ def save_tasks(tasks):
 
 def add_task(title, description):
     tasks = load_tasks()
-    task = {"title": title, "description": description}
+    task = {"title": title, "description": description,
+            "done": False}  # Incluído o status da tarefa
     tasks.append(task)
     save_tasks(tasks)
 
@@ -52,5 +53,15 @@ def delete_task(index):
 def update_task(index, title, description):
     tasks = load_tasks()
     if 0 <= index < len(tasks):
-        tasks[index] = {"title": title, "description": description}
+        tasks[index]["title"] = title
+        tasks[index]["description"] = description
+        save_tasks(tasks)
+
+# Função para marcar uma tarefa como concluída
+
+
+def mark_task_as_done(index):
+    tasks = load_tasks()
+    if 0 <= index < len(tasks):
+        tasks[index]["done"] = True  # Atualiza o status para "concluído"
         save_tasks(tasks)
