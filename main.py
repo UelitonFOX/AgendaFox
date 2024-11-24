@@ -1,2 +1,5 @@
 # main.py
-print("Bem-vindo ao AgendaFox!")
+from src.views import create_task_window
+
+if __name__ == "__main__":
+    create_task_window()
