@@ -12,72 +12,58 @@ O projeto **AgendaFox** tem como objetivo fornecer um sistema simples e eficient
 - Atualizar tarefas.
 - Excluir tarefas.
 - Marcar tarefas como concluídas.
-- Interface gráfica intuitiva e organizada utilizando Tkinter.
+- Interface gráfica com layout intuitivo.
 
 ---
 
 ## Cronograma
 
-- **Planejamento**: 24/11/2024 (início).
-- **Desenvolvimento das funcionalidades principais**: 24/11/2024.
-- **Testes e ajustes finais**: 24/11/2024 (mesmo dia).
-- **Conclusão**: 24/11/2024.
+- **Planejamento**: 24/11/2024
+- **Desenvolvimento das funcionalidades principais**: 24/11/2024
+- **Testes e ajustes finais**: 24/11/2024
+- **Entrega final**: 24/11/2024
 
 ---
 
 ## Tecnologias Usadas
 
-- **Python 3.x**: Linguagem de programação utilizada.
-- **Tkinter**: Biblioteca para desenvolvimento da interface gráfica.
-- **Git**: Controle de versão e organização do repositório.
+- Python 3.x
+- Tkinter (para a interface gráfica)
+- JSON (para armazenamento de tarefas)
+- Git (controle de versão)
 
 ---
 
 ## Uso do Git
 
-- Utilizei **branches** para organizar as funcionalidades principais: `feature/interface`, `feature/models`, etc.
-- Realizei **commits** frequentes com mensagens claras sobre o que foi alterado ou adicionado.
-- Após finalizar uma funcionalidade, fiz o **merge** da branch correspondente para a branch principal (`main`).
+- **Branches Criadas**:
+
+  - `main`: Branch principal para entrega final.
+  - `feature/interface`: Desenvolvimento da interface gráfica.
+  - `feature/models`: Desenvolvimento da lógica de manipulação de dados.
+- **Commits Frequentes**:Mensagens claras como:
+
+  - "Adicionando funcionalidade de atualização de tarefas"
+  - "Corrigindo estado do repositório e atualizando arquivos"
+- **Merges Organizados**:
+  Após finalizar cada funcionalidade, realizamos o merge das branches de funcionalidade na branch principal.
 
 ---
 
-## Desafios Enfrentados
+## Revisão de Código com Pull Requests
 
-Durante o desenvolvimento do projeto **AgendaFox**, enfrentei os seguintes desafios:
+Adicionamos o uso de **Pull Requests** para revisar e integrar mudanças antes de realizar o merge com a branch principal. Essa prática ajuda a manter o código organizado e a garantir que todas as alterações estejam devidamente validadas.
 
-1. **Erro de Rastreamento no Git**:
+### Exemplo de Pull Request:
 
-   - **Problema**: O repositório rastreava arquivos grandes e indesejados, causando erros durante os commits e pushes.
-   - **Solução**: Removi os arquivos indesejados com os comandos:
-     ```bash
-     git rm -r --cached <arquivo>
-     git commit -m "Removendo arquivos indesejados do rastreamento"
-     ```
+- **Título**: "Adicionando funcionalidade para marcar tarefas como concluídas"
+- **Descrição**: "Adiciona a função `mark_task_as_done` no models.py e atualiza a interface para permitir marcar tarefas como concluídas."
+- **Processo**:
+  1. Desenvolvemos as alterações na branch `feature/interface`.
+  2. Abrimos um Pull Request para revisão.
+  3. Após revisão e validação, integramos as mudanças na branch principal `main`.
 
-     Adicionei as regras adequadas no arquivo `.gitignore` para evitar que esses arquivos fossem rastreados novamente.
-2. **Falha ao Trocar de Branch**:
-
-   - **Problema**: O Git apresentava um erro ao tentar alternar entre branches devido a arquivos bloqueados ou corrompidos.
-   - **Solução**: Identifiquei o problema com o arquivo `index.lock` no diretório `.git` e o removi manualmente:
-     ```bash
-     rm -f .git/index.lock
-     ```
-3. **Estrutura do Layout da Interface**:
-
-   - **Problema**: A interface inicial estava desalinhada e dificultava a navegação do usuário.
-   - **Solução**: Adotei o uso do método `grid()` para organizar os elementos da interface, o que resultou em uma disposição mais clara e intuitiva.
-4. **Validação de Dados**:
-
-   - **Problema**: Durante a execução, tarefas com campos vazios causavam erros.
-   - **Solução**: Implementei validações nos campos de entrada para garantir que todos os dados necessários fossem preenchidos antes de processar as tarefas.
-5. **Integração entre Views e Models**:
-
-   - **Problema**: Inicialmente, as funções de manipulação de tarefas estavam diretamente na interface, dificultando a manutenção do código.
-   - **Solução**: Refatorei o código para separar as responsabilidades, movendo a lógica para o arquivo `models.py`.
-6. **Gestão de Branches**:
-
-   - **Problema**: Inicialmente, todo o trabalho estava sendo feito na branch principal (`main`), o que dificultava a organização e a rastreabilidade.
-   - **Solução**: Implementei um fluxo de trabalho com branches específicas para cada funcionalidade, como `feature/interface` e `feature/models`, permitindo maior organização e controle.
+Essa abordagem promove um fluxo de trabalho mais profissional e colaborativo, mesmo em projetos individuais.
 
 ---
 
@@ -85,4 +71,10 @@ Durante o desenvolvimento do projeto **AgendaFox**, enfrentei os seguintes desaf
 
 Este projeto tem como objetivo aplicar o uso do Git para controle de versão, além de fornecer uma solução simples de gerenciamento de tarefas com uma interface gráfica.
 
-Futuras melhorias podem incluir o cadastro de clientes, controle financeiro, e até mesmo a possibilidade de marcar tarefas como concluídas. O desenvolvimento contínuo do projeto será realizado conforme as necessidades surgirem.
+Futuras melhorias podem incluir o cadastro de clientes, controle financeiro, e até mesmo a possibilidade de marcar tarefas como concluídas automaticamente por critérios predefinidos. O desenvolvimento contínuo do projeto será realizado conforme as necessidades surgirem.
+
+---
+
+## Link para o Repositório
+
+- [Repositório no GitHub](https://github.com/UelitonFOX/AgendaFox)
